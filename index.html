@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>La page de Koffi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Koffi</div>
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#image">Accueil</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#projects">Projets</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Section Accueil -->
+  <header id="image">
+    <img src="image1.jpg" alt="Photo de Koffi" class="fade-slide">
+    <h1 class="fade-slide" id="main-title">Soyez les bienvenus sur ma page</h1>
+    <h2 class="fade-slide" id="subtitle">Aspiring software developer</h2>
+    <p>Merci de visiter ma page personnelle !</p>
+  </header>
+
+  <!-- Section À propos -->
+  <section id="about" class="fade-slide">
+    <h3>À propos de moi</h3>
+    <p>
+      Je m'appelle Koffi, un passionné de développement web et d'intelligence artificielle.
+      J'apprends à coder avec HTML, CSS et JavaScript, et je construis petit à petit mes projets.
+      Mon objectif : devenir un développeur capable de créer des solutions utiles et intelligentes. 💡
+    </p>
+  </section>
+
+  <!-- Section Projets -->
+  <section id="projects" class="fade-slide">
+    <h3>Mes projets</h3>
+
+    <div class="project-card">
+      <h4>📝 To-Do List</h4>
+      <p>Une application simple pour ajouter, supprimer et marquer des tâches comme terminées. Sauvegarde dans le localStorage.</p>
+    </div>
+
+    <div class="project-card">
+      <h4>🤖 Mini Chatbot (à venir)</h4>
+      <p>Un assistant IA basique qui répond à quelques questions. En développement avec JavaScript.</p>
+    </div>
+    <div id="roobot"></div>
+
+    <div class="project-card">
+      <h4>🌐 Mon site perso</h4>
+      <p>Le site que tu visites en ce moment ! Réalisé avec HTML, CSS et un peu de magie JavaScript ✨</p>
+    </div>
+  </section>
+
+  <!-- Réseaux sociaux -->
+  <section class="fade-slide" id="social">
+    <h3>Me suivre</h3>
+    <a href="https://instagram.com" target="_blank">Instagram</a> |
+    <a href="https://tiktok.com" target="_blank">TikTok</a> |
+    <a href="https://telegram.org" target="_blank">Telegram</a> |
+    <a href="https://facebook.com" target="_blank">Facebook</a>
+  </section>
+
+  <!-- Message de bienvenue animé -->
+  <div id="welcome-message">Bienvenue sur mon site !</div>
+
+  <!-- Footer -->
+  <footer class="fade-slide">
+    <p>Merci d’avoir visité ma page ✨</p>
+    <p>Contact : konancedrickkoffi954@gmail.com</p>
+    <p>&copy; 2025 - Koffi</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const message = document.getElementById("welcome-message");
+      const fadeElements = document.querySelectorAll(".fade-slide");
+
+      setTimeout(() => {
+        message.classList.add("visible");
+      }, 500);
+
+      fadeElements.forEach((el, index) => {
+        setTimeout(() => {
+          el.classList.add("visible");
+        }, 300 * (index + 1));
+      });
+    });
+  </script>
+
+<script>
+  const burger = document.getElementById("burger");
+  const navLinks = document.getElementById("nav-links");
+
+  burger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
+    <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
